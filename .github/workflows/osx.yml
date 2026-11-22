@@ -39,6 +39,7 @@ jobs:
           make pack
           ros install snmsts/sn.github
       - name: Upload
+        if: github.ref == 'refs/heads/master'
         env:
           GITHUB_OAUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

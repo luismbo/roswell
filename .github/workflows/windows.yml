@@ -58,6 +58,7 @@ jobs:
           make install
           make pack.zip
       - name: Upload
+        if: github.ref == 'refs/heads/master'
         env:
           GITHUB_OAUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: msys2 {0}
@@ -106,6 +107,7 @@ jobs:
           make install
           make pack.zip
       - name: Upload
+        if: github.ref == 'refs/heads/master'
         env:
           GITHUB_OAUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: msys2 {0}

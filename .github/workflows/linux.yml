@@ -81,6 +81,7 @@ jobs:
             make -f scripts/Makefile docker
           fi
       - name: upload
+        if: github.ref == 'refs/heads/master'
         env:
           GITHUB_OAUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ secrets.VERSION }}
